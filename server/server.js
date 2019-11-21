@@ -46,9 +46,9 @@ app.post('/testPost', async function (req, res) {
   const Response = await model.findOne({ username, password });
 
 
-  console.log(Response.length);
-  if (Response.length !== 0)
+  if (Response && Response.length !== 0)
   {
+    console.log(Response.length);
     res.send( { isLoggedIn: true });
   } else {
     res.send( { isLoggedIn: false });

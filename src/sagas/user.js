@@ -1,14 +1,13 @@
 import { call, put } from "redux-saga/effects";
-import axios from 'axios';
 import { responseUserLogin } from "../actions/user";
-
-const checkUserExists = (username, password) => {
-    return axios({
-        method : "POST",
-        url : 'http://localhost:3002/testPost',
-        data : { username, password }
-    });
-}
+import checkUserExists from './checkUserLogin';
+// const checkUserExists = (username, password) => {
+//     return axios({
+//         method : "POST",
+//         url : 'http://localhost:3002/testPost',
+//         data : { username, password }
+//     });
+// }
 
 function* checkUserLogin(action) {
   try {
